@@ -231,15 +231,32 @@ a {
   border: 3px solid #fff;
   padding: 0.75em;
   border-radius: 50%;
+  position: relative;
+  bottom: 0;
+  transition: 0.5s;
 }
 
 a > i {
   font-size: 1.75em;
 }
 
-a:focus {
-  border-color: rgb(224, 224, 224);
-  color: rgb(224, 224, 224);
+a:hover {
+  bottom: 10px
+}
+
+a + p {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin: auto;
+  left: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+a:hover + p {
+  top: 88%;
+  opacity: 1;
 }
 
 @media (min-width: 640px) {
