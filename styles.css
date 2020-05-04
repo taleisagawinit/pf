@@ -173,11 +173,13 @@ li {
   padding: 15px;
   width: 90%;
   margin-right: 20px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #fff;
     border-radius: 20px;
+  position: relative;
 }
 
 .carousel-cell > div {
@@ -203,6 +205,7 @@ li {
   color: #e995a6;
 }
 
+
 #kana {
   background-image: url("./kana.png");
 }
@@ -213,6 +216,10 @@ li {
 
 #memory {
   background-image: url("./memory.png");
+}
+
+#moola {
+  background-image: url("./moola.png");
 }
 
 .flickity-button {
@@ -257,6 +264,56 @@ a + p {
 a:hover + p {
   top: 88%;
   opacity: 1;
+}
+
+/* github corner ribbon styles */
+#ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+#ribbon::before,
+#ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #c08795;
+}
+#ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: #e995a6;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  text-align: center;
+}
+
+/* top right positioning styles*/
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-top-right span {
+  left: -25px;
+  top: 30px;
+  transform: rotate(45deg);
 }
 
 @media (min-width: 640px) {
