@@ -173,13 +173,20 @@ li {
   padding: 15px;
   width: 90%;
   margin-right: 20px;
-  margin-top: 15px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #fff;
     border-radius: 20px;
   position: relative;
+}
+
+.carousel-cell a {
+  margin: 0;
+  padding: 0;
+  border: none;
+  position: unset;
 }
 
 .carousel-cell > div {
@@ -201,10 +208,18 @@ li {
   padding: 0.5em;
   font-size: 0.85em;
   margin: 0.2em;
-  border: 3px solid #e995a6;
-  color: #e995a6;
+  border: 2px solid #70d8d9;
+  color: #70d8d9;
 }
 
+.carousel-cell > ul .gray{
+  display: none;
+}
+
+.carousel-cell > ul .viewSource {
+  color: #000000;
+  border-color: #000000;
+}
 
 #kana {
   background-image: url("./kana.png");
@@ -268,8 +283,9 @@ a:hover + p {
 
 /* github corner ribbon styles */
 #ribbon {
-  width: 150px;
-  height: 150px;
+    /* width: 110px; height: 110px; */
+  width: 115px;
+  height: 115px;
   overflow: hidden;
   position: absolute;
 }
@@ -281,15 +297,36 @@ a:hover + p {
   display: block;
   border: 5px solid #c08795;
 }
+
+#ribbon:hover::before,
+#ribbon:hover::after {
+  border-color: #909090;
+}
+
 #ribbon span {
   position: absolute;
   display: block;
-  width: 225px;
-  padding: 15px 0;
+  font-size: 1em;
+    width: 175px;
+    height: 40px;
   background-color: #e995a6;
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
   color: #fff;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  transition: 0.5s;
+}
+
+#ribbon span i {
+  margin-left: 5px;
+}
+
+#ribbon span:hover {
+  background-color: #9e9e9e;
 }
 
 /* top right positioning styles*/
@@ -311,8 +348,8 @@ a:hover + p {
   right: 0;
 }
 .ribbon-top-right span {
-  left: -25px;
-  top: 30px;
+  left: -20px;
+    top: 25px;
   transform: rotate(45deg);
 }
 
@@ -374,7 +411,24 @@ a:hover + p {
 }
 
 @media (min-width: 768px) {
+  .carousel-cell > ul .gray{
+    display: block;
+    border-color: #9e9e9e;
+    color: #9e9e9e;
+  }
 
+  #ribbon {
+    width: 125px;
+    height: 125px;
+  }
+
+  #ribbon span {
+    width: 200px;
+  }
+  .ribbon-top-right span {
+    left: -25px;
+  top: 30px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -425,6 +479,16 @@ a:hover + p {
     margin: 0.45em;
     padding: 1.15em;
   }
+  #ribbon {
+    width: 150px;
+    height: 150px;
+  }
+  #ribbon span {
+    width: 225px;
+    height: 50px;
+    font-size: 1.15em;
+  }
+
 
 }
 
